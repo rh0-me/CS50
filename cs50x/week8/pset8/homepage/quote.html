@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="styles.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>rh0-me</title>
+    <script>
+        var quotes = ['&quot;Be yourself; everyone else is already taken.&quot;<br>― Oscar Wilde ', '&quot;Be the change that you wish to see in the world.&quot;<br>― Mahatma Gandhi ', '&quot;If you tell the truth, you don\'t have to remember anything.&quot;<br>― Mark Twain ', '&quot;I\'ve learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.&quot;<br>― Maya Angelou ', '&quot;Live as if you were to die tomorrow. Learn as if you were to live forever.&quot;<br>― Mahatma Gandhi ','&quot;I believe that everything happens for a reason. People change so that you can learn to let go, things go wrong so that you appreciate them when they\'re right, you believe lies so you eventually learn to trust no one but yourself, and sometimes good things fall apart so better things can fall together.&quot;<br>― Marilyn Monroe ']
+        function randomQuotes() {
+            var idx = Math.floor(Math.random() * quotes.length)
+            document.getElementById('quote').innerHTML = quotes[idx]
+        }
+    </script>
+</head>
+
+<body onload="randomQuotes()">
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="/cali.html">Calisthenics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/quote.html">Quote of the Day</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="/text.html">Random Text</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit"><a id="bamboozle" target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.youtube.com/watch?v=xvFZjo5PgG0&ab_channel=Duran">Search</a></button>
+                </form>
+            </div>
+    </nav>
+    <div id="quote-div">
+        <span class="text-center bd-highlight fs-1 text fst-italic" id="quote"></span>
+    </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia!</title>
+    <script>
+        // TODO: Add code to check answers to questions
+
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Part 1: Multiple Choice </h2>
+            <hr>
+            <!-- TODO: Add multiple choice question here -->
+            <h3 class="q1">Which ocean is the largest? </h3>
+            <button class="false">Indian</button><button class="correct">Pacific</button><button
+                class="false">Atlantic</button><button class="false">Arctic</button>
+        </div>
+
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <hr>
+            <!-- TODO: Add free response question here -->
+            <h3 class="q2">What is the name of Batman’s butler?</h3>
+            <input autocomplete="off" class="answer" placeholder="Answer" type="text">
+            <button class="submit2">Submit</button>
+        </div>
+        <script>
+            document.querySelectorAll('.false').forEach(item => {
+                item.addEventListener('click', function (e) {
+                    e.srcElement.style.backgroundColor = 'red';
+                    let par = document.createElement('p');
+                    let question = document.querySelector('.q1')
+                    par.innerHTML = 'Incorrect';
+                    question.parentNode.insertBefore(par, question.nextSibling);
+                    setTimeout(function () { par.parentNode.removeChild(par); }, 500)
+                })
+            });
+            document.querySelectorAll('.correct').forEach(item => {
+                item.addEventListener('click', function (e) {
+                    e.srcElement.style.backgroundColor = 'green';
+                    let par = document.createElement('p');
+                    let question = document.querySelector('.q1')
+                    par.innerHTML = 'Correct';
+                    question.parentNode.insertBefore(par, question.nextSibling);
+                    setTimeout(function () { par.parentNode.removeChild(par); }, 500)
+                })
+            });
+            document.querySelector('.submit2').addEventListener('click', function (e) {
+                let answer = document.querySelector('.answer');
+                let input = answer.value;
+                let par = document.createElement('p');
+                let question = document.querySelector('.q2');
+                if (input.toLowerCase() === 'alfred') {
+                    par.innerHTML = 'Correct';
+                    answer.style.backgroundColor = 'green';
+                }
+                else {
+                    par.innerHTML = 'Incorrect';
+                    answer.style.backgroundColor = 'red';
+                }
+                question.parentNode.insertBefore(par, question.nextSibling);
+                setTimeout(function () { par.parentNode.removeChild(par); }, 500)
+            });
+        </script>
+    </div>
+</body>
+
+</html>
