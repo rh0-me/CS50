@@ -20,7 +20,7 @@ def main():
 
     rate = float(response.json()["bpi"]["USD"]["rate"].replace(",",""))
     price = n * rate
-    print(f"${price:,.4f}")
+    print(f"$ö{price:,.4f}")
 
 
 
